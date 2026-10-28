@@ -9,6 +9,24 @@ text object for a PDF editor to delete.
 Trade-offs: the output has no selectable or searchable text, and files are
 usually larger than the originals.
 
+## Examples
+
+Page 1 of [a sample document](examples/sample.pdf) with a few settings.
+Click a name to open the full PDF.
+
+| [Original](examples/sample.pdf) | [Red (default)](examples/output/red.pdf) | [Navy](examples/output/navy.pdf) |
+| --- | --- | --- |
+| ![Original](examples/previews/original.jpg) | ![Red](examples/previews/red.jpg) | ![Navy](examples/previews/navy.jpg) |
+| | `-t "Confidential. For the eyes of Jane Doe"` | `... -c navy` |
+
+| [Green](examples/output/green.pdf) | [Gray draft](examples/output/gray-draft.pdf) |
+| --- | --- |
+| ![Green](examples/previews/green.jpg) | ![Gray draft](examples/previews/gray-draft.jpg) |
+| `... -c "#1a7f37"` | `-t "DRAFT - DO NOT SHARE" -c gray --opacity 0.5` |
+
+The example PDFs are rendered at `--dpi 100` to keep the repo small. To
+rebuild them, run `python3 -m examples.build` from the repo root.
+
 ## Requirements
 
 - Python 3.8+
